@@ -17,16 +17,24 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  /* color: rgb(var(--foreground-rgb));
   background: white;
   margin: 0;
   font-family: 'Inter', sans-serif;
-  display: flex;
-  min-height: 100vh;
+  display: flex; */
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+/* responsive-pageableRoot */
+@media (max-width: 640px) {
+  .responsive-pageableRoot {
+    display: flex;
+    flex-direction: column;
+    background-color: aqua;
   }
 }

@@ -103,7 +103,7 @@ const SideBarMenu = () => {
       </div>
       <div className="pt-8 flex flex-col gap-4 relative">
         {menus.map((menu, i) => {
-          const isActive = pathname === menu.link; // Use pathname to check if the menu item is active
+          const isActive = pathname === menu.link; 
           return (
             <Link
               href={menu.link}
