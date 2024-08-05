@@ -82,8 +82,8 @@ const SideBarMenu = () => {
 
   const menus = [
     { name: "Dashboard", link: "/", icon: MdOutlineDashboard },
-    { name: "Usuário", link: "/pages/employee", icon: AiOutlineUser },
-    { name: "Clientes", link: "/pages/clients", icon: IoPeopleSharp },
+    { name: "Usuário", link: "/pages/users", icon: AiOutlineUser },
+    { name: "Clientes", link: "/pages/customers", icon: IoPeopleSharp },
     { name: "Outra Opção", link: "#", icon: SlOptions, margin: true },
     { name: "Configurações", link: "/pages/settings", icon: RiSettings4Line },
   ];

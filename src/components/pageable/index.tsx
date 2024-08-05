@@ -25,7 +25,7 @@ const PageableRoot = ({ children, className, ...props }: PageableRootProps) => {
     <div
       role="pageableRoot"
       className={cn(
-        "flex items-center gap-5 bg-orange-500 p-4 text-sm text-gray-500 responsive-pageableRoot",
+        "flex items-center gap-5  p-4 text-sm text-gray-500 responsive-pageableRoot",
         className
       )}
       {...props}
@@ -62,7 +62,7 @@ const PageablePerPage = ({
   setPageNumber,
 }: PageablePerPageProps) => {
   return (
-    <div className="mr-2 flex items-center gap-2 whitespace-nowrap text-[#2D3748] bg-orange-300">
+    <div className="mr-2 flex items-center gap-2 whitespace-nowrap text-[#2D3748] ">
       <Text className="text-sm">{pluralName} por página:</Text>
       <FormControl.Root className="max-w-[75px] shrink-0">
         <Select.Root

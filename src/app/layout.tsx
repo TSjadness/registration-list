@@ -11,7 +11,7 @@ import WelcomeScreen from "./home/pages";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "list of things",
+  title: "Listagem de Usuário",
   description: "A list of things",
 };
 

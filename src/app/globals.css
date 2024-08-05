@@ -17,11 +17,12 @@
 }
 
 body {
-  /* color: rgb(var(--foreground-rgb));
+  color: black;
   background: white;
   margin: 0;
   font-family: 'Inter', sans-serif;
-  display: flex; */
+  display: flex;
+  
 }
 
 @layer utilities {
@@ -30,11 +31,9 @@ body {
   }
 }
 
-/* responsive-pageableRoot */
 @media (max-width: 640px) {
   .responsive-pageableRoot {
     display: flex;
     flex-direction: column;
-    background-color: aqua;
   }
 }

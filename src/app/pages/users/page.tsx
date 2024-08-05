@@ -7,18 +7,17 @@ import { api } from "@/utils/api";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 
-const ClientsPage = () => {
+const EmployeePage = () => {
   const [searchString, setSearchString] = useState("");
   const [pageNumber, setPageNumber] = useState(1);
   const [pageSize, setPageSize] = useState(7);
-
 
   async function getStores(
     pageNumber?: number,
     pageSize?: number,
     searchString?: string
   ) {
-    return api.get("/clients", {
+    return api.get("/users", {
       params: {
         pageNumber,
         pageSize,
@@ -28,19 +27,19 @@ const ClientsPage = () => {
   }
 
   const { data, isLoading } = useQuery({
-		queryKey: ['/clients', pageNumber, pageSize, searchString],
-		queryFn: () => getStores(pageNumber, pageSize, searchString),
-		select({ data }) {
-			return data
-		},
-	})
+    queryKey: ["/users", pageNumber, pageSize, searchString],
+    queryFn: () => getStores(pageNumber, pageSize, searchString),
+    select({ data }) {
+      return data;
+    },
+  });
 
   return (
-    <div className=" bg-slate-500 ">
+    <div className="">
       <div className="flex h-auto w-full flex-col gap-4 rounded-xl bg-white px-0 py-4">
         <SearchFilter
           id="searchFilter"
-          placeholder="Digite o nome do cliente"
+          placeholder="Digite o nome do Usuário"
           onSearchChange={(value) => {
             setSearchString(value);
             setPageNumber(1);
@@ -63,7 +62,7 @@ const ClientsPage = () => {
             <Table.Body>
               <TableContent
                 totalItemCount={data?.totalItemCount}
-                pageName="clients"
+                pageName="Usuários"
               >
                 <Table.Row>
                   <Table.Cell>Nome</Table.Cell>
@@ -71,37 +70,40 @@ const ClientsPage = () => {
                   <Table.Cell>Telefone</Table.Cell>
                   <Table.Cell>Email</Table.Cell>
                   <Table.Cell className="w-12"></Table.Cell>
+                  <Table.Cell></Table.Cell>
                 </Table.Row>
+              </TableContent>
 
-                {/* {data?.items.map((item: any) => (
+              {/* <TableContent
+                totalItemCount={data?.totalItemCount}
+                pageName="Usuários"
+              >
+                {data?.items.map((item: any) => (
                   <Table.Row key={item.id}>
-                    <Table.Cell>codigo</Table.Cell>
                     <Table.Cell>Nome</Table.Cell>
                     <Table.Cell>CPF</Table.Cell>
                     <Table.Cell>Telefone</Table.Cell>
                     <Table.Cell>Email</Table.Cell>
                     <Table.Cell className="w-12"></Table.Cell>
-                    <Table.Cell>
-                    </Table.Cell>
+                    <Table.Cell></Table.Cell>
                   </Table.Row>
-                ))} */}
-                
-              </TableContent>
+                ))}
+              </TableContent> */}
             </Table.Body>
           </Table.Root>
 
           <Pageable.Root>
             <div className="flex flex-grow items-center gap-3">
               <Pageable.Total
-                name="Cliente"
-                pluralName="Clientes"
+                name="Usuário"
+                pluralName="Usuários"
                 total={data?.totalItemCount}
               />
             </div>
             <Pageable.Loading isLoading={isLoading} />
             <Pageable.PerPage
               pageSize={pageSize}
-              pluralName="Clientes"
+              pluralName="Usuários"
               setPageNumber={setPageNumber}
               setPageSize={setPageSize}
             />
@@ -128,4 +130,4 @@ const ClientsPage = () => {
   );
 };
 
-export default ClientsPage;
+export default EmployeePage;
